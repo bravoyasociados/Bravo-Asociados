@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Bravo & Asociados: asesoría y representación legal. Civil, mercantil, familiar, laboral y penal. Agenda una consulta." />
+  <title>Bravo & Asociados | Despacho Jurídico</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bravo & Asociados | Despacho Jurídico" />
+  <meta property="og:description" content="Asesoría y representación legal. Agenda una consulta." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      /* ✅ Negro & Dorado (premium jurídico) */
+      --bg:#070707;
+      --card:#111111;
+      --muted:#b7b7b7;
+      --text:#f5f5f5;
+      --brand:#c9a24d;     /* dorado */
+      --brand2:#e6c77a;    /* dorado suave */
+      --line:rgba(201,162,77,.28);
+      --shadow: 0 12px 32px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(1000px 450px at 12% 0%, rgba(201,162,77,.16), transparent 58%),
+        radial-gradient(1000px 450px at 88% 20%, rgba(230,199,122,.10), transparent 58%),
+        linear-gradient(180deg, #050505 0%, #070707 30%, #050505 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    .skip:focus{left:18px;top:18px;width:auto;height:auto;padding:10px 12px;background:#111;border:1px solid var(--line);border-radius:10px;z-index:999}
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index:100;
+      backdrop-filter: blur(10px);
+      background: rgba(7,7,7,.72);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 750; letter-spacing:.2px;
+    }
+
+    /* ✅ Logo real */
+    .logoImg{
+      width:40px;height:40px;border-radius:12px;
+      object-fit:contain;
+      background: rgba(201,162,77,.10);
+      border:1px solid rgba(201,162,77,.25);
+      padding:6px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.45);
+    }
+
+    nav ul{display:flex; gap:16px; list-style:none; margin:0; padding:0; align-items:center;}
+    nav a{
+      font-size: 14px;
+      color: rgba(245,245,245,.86);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    nav a:hover{background: rgba(255,255,255,.06)}
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 650;
+      box-shadow: none;
+      cursor:pointer;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      font-size:14px;
+      white-space: nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      border-color: rgba(201,162,77,.45);
+      background: linear-gradient(135deg, rgba(201,162,77,.18), rgba(230,199,122,.10));
+      box-shadow: 0 18px 35px rgba(0,0,0,.35);
+    }
+    .btn.primary:hover{
+      border-color: rgba(201,162,77,.70);
+      background: linear-gradient(135deg, rgba(201,162,77,.26), rgba(230,199,122,.16));
+    }
+    .menuBtn{display:none}
+
+    /* Hero */
+    .hero{padding: 56px 0 26px;}
+    .heroGrid{
+      display:grid; grid-template-columns: 1.25fr .9fr; gap: 22px; align-items:stretch;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 8px 12px; border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04); border-radius: 999px;
+      color: rgba(245,245,245,.88);
+      font-size: 13px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background: var(--brand2); box-shadow: 0 0 0 4px rgba(201,162,77,.12)}
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -.5px;
+    }
+    .lead{
+      color: rgba(245,245,245,.80);
+      font-size: 16px;
+      max-width: 62ch;
+      margin-bottom: 18px;
+    }
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin: 18px 0 10px}
+    .trust{
+      display:flex; gap:14px; flex-wrap:wrap; margin-top: 14px;
+      color: var(--muted); font-size: 13px;
+    }
+    .trust span{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03);
+    }
+
+    .card{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(17,17,17,.78);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroCard{padding: 18px;}
+    .heroCard h3{margin:0 0 8px; font-size: 16px;}
+    .heroCard p{margin:0; color: var(--muted); font-size: 14px;}
+
+    /* ✅ Logo imponente en el panel */
+    .heroLogoWrap{
+      margin-top: 12px;
+      border-top:1px solid rgba(255,255,255,.08);
+      padding-top: 14px;
+      display:flex;
+      justify-content:center;
+    }
+    .heroLogo{
+      width:min(320px, 100%);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.65));
+    }
+
+    .miniGrid{
+      display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;
+    }
+    .mini{
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+    }
+    .mini b{display:block; font-size: 14px; margin-bottom: 4px}
+    .mini small{color: var(--muted)}
+
+    /* Sections */
+    section{padding: 40px 0;}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 14px;
+      margin-bottom: 16px;
+    }
+    .sectionTitle h2{margin:0; font-size: 26px; color: var(--brand);}
+    .sectionTitle p{margin:0; color: var(--muted); max-width: 62ch;}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px;}
+    .item{padding: 18px;}
+    .item h3{margin:0 0 8px; font-size: 16px;}
+    .item p{margin:0; color: var(--muted); font-size: 14px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 10px; border-radius: 999px;
+      border: 1px solid rgba(201,162,77,.30); background: rgba(201,162,77,.08);
+      font-size: 12px; color: rgba(245,245,245,.90);
+      margin-bottom: 10px;
+    }
+    .icon{
+      width:28px;height:28px;border-radius:10px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: rgba(201,162,77,.12);
+      border:1px solid rgba(201,162,77,.24);
+    }
+    .muted{color: var(--muted)}
+
+    /* Process */
+    .steps{counter-reset: step}
+    .step{
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .step:before{
+      counter-increment: step;
+      content: counter(step);
+      position:absolute; top: 14px; right: 14px;
+      width: 36px; height: 36px; border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 800;
+      color: rgba(245,245,245,.92);
+      background: rgba(201,162,77,.12);
+      border: 1px solid rgba(201,162,77,.25);
+    }
+
+    /* FAQ */
+    details{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 14px;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight: 650;
+      list-style:none;
+    }
+    details summary::-webkit-details-marker{display:none}
+    details p{color: var(--muted); margin: 10px 0 0; font-size: 14px}
+
+    /* Contact */
+    form{display:grid; gap: 10px;}
+    label{font-size: 13px; color: rgba(245,245,245,.90)}
+    input, textarea, select{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(10,10,10,.70);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height: 120px; resize: vertical}
+    .formRow{display:grid; grid-template-columns: 1fr 1fr; gap: 10px;}
+    .note{font-size: 12px; color: var(--muted)}
+    .ok{display:none; padding: 12px; border-radius: 14px; border: 1px solid rgba(201,162,77,.35); background: rgba(201,162,77,.10); color: rgba(245,245,245,.92)}
+
+    /* Footer */
+    footer{
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 28px 0;
+      color: var(--muted);
+    }
+    .footerGrid{display:grid; grid-template-columns: 1.1fr .9fr .9fr; gap: 14px;}
+    .foot a{color: rgba(245,245,245,.82)}
+    .foot a:hover{text-decoration: underline}
+    .tiny{font-size: 12px; color: rgba(183,183,183,.92)}
+
+    /* WhatsApp floating */
+    .wa{
+      position: fixed; right: 16px; bottom: 16px; z-index: 200;
+      display:flex; align-items:center; gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(201,162,77,.45);
+      background: rgba(10,10,10,.70);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 40px rgba(0,0,0,.40);
+    }
+    .wa .b{
+      width:34px;height:34px;border-radius:14px;
+      background: rgba(201,162,77,.14);
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(201,162,77,.30)
+    }
+    .wa small{color: var(--muted); display:block; line-height:1.1}
+    .wa strong{display:block; font-size: 13px; line-height:1.1}
+    .wa:hover{background: rgba(255,255,255,.06)}
+
+    /* Responsive */
+   @media (max-width: 920px){
+
+  /* Estructura */
+  .heroGrid{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Textos centrados */
+  h1,
+  .lead,
+  .sectionTitle h2,
+  .sectionTitle p{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Botones centrados */
+  .heroActions{
+    justify-content: center;
+  }
+
+  .cta{
+    justify-content: center;
+  }
+
+  .btn{
+    justify-content: center;
+  }
+
+  /* Kicker */
+  .kicker{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Trust */
+  .trust{
+    justify-content: center;
+  }
+
+  /* Cards */
+  .card{
+    text-align: center;
+  }
+
+  .heroLogo{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Grids */
+  .grid3{grid-template-columns: 1fr}
+  .grid2{grid-template-columns: 1fr}
+  .formRow{grid-template-columns: 1fr}
+
+  /* Footer */
+  .footerGrid{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* Menú móvil */
+  nav ul{display:none}
+  .menuBtn{display:inline-flex}
+
+  nav.open ul{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:absolute;
+    left: 18px;
+    right: 18px;
+    top: 62px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(7,7,7,.92);
+    box-shadow: var(--shadow);
+  }
+
+  nav.open a{
+    padding: 10px 12px;
+    text-align:center;
+  }
+}
+
+    }
+  </style>
+</head>
+
+<body>
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header>
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img class="logoImg" src="logo-bravo.png" alt="Bravo & Asociados">
+        <span>Bravo <span style="opacity:.75">&amp;</span> Asociados</span>
+      </a>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <button class="btn menuBtn" id="menuBtn" aria-label="Abrir menú">Menú</button>
+        <a class="btn" href="#contacto">Agendar consulta</a>
+        <a class="btn primary" href="#contacto">Cotizar caso</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="heroGrid">
+        <div>
+          <span class="kicker"><span class="dot" aria-hidden="true"></span> Despacho Jurídico • Atención personalizada</span>
+          <h1>Defendemos tus derechos con estrategia y claridad.</h1>
+          <p class="lead">
+            En <b>Bravo &amp; Asociados</b> brindamos asesoría y representación legal con enfoque práctico:
+            diagnóstico, plan de acción y acompañamiento de principio a fin.
+          </p>
+          <div class="heroActions">
+            <a class="btn primary" href="#contacto">Agendar consulta</a>
+            <a class="btn" href="#servicios">Ver servicios</a>
+            <a class="btn" href="#proceso">Cómo trabajamos</a>
+          </div>
+
+          <div class="trust" role="list" aria-label="Beneficios">
+            <span role="listitem">⚖️ Transparencia en honorarios</span>
+            <span role="listitem">🧾 Contrato y plan de trabajo</span>
+            <span role="listitem">⏱️ Respuesta en 24–48 h</span>
+          </div>
+        </div>
+
+        <aside class="card heroCard" aria-label="Panel informativo">
+          <h3>Consulta inicial</h3>
+          <p>Recibe orientación clara sobre riesgos, opciones y próximos pasos.</p>
+
+          <div class="miniGrid" aria-label="Datos rápidos">
+            <div class="mini">
+              <b>Modalidad</b>
+              <small>Presencial / En línea</small>
+            </div>
+            <div class="mini">
+              <b>Documentos</b>
+              <small>Lista personalizada</small>
+            </div>
+            <div class="mini">
+              <b>Seguimiento</b>
+              <small>Actualizaciones periódicas</small>
+            </div>
+            <div class="mini">
+              <b>Confidencialidad</b>
+              <small>Trato profesional</small>
+            </div>
+          </div>
+
+          <!-- ✅ Logo grande (opción A) -->
+          <div class="heroLogoWrap" aria-label="Logotipo del despacho">
+            <img class="heroLogo" src="logo-bravo.png" alt="Bravo & Asociados">
+          </div>
+
+          <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:14px;">
+            <p class="muted" style="margin:0 0 8px;">
+              ¿Tienes urgencia? Escríbenos por WhatsApp para una primera orientación.
+            </p>
+            <a class="btn" href="#contacto">Contactar ahora</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <div class="sectionTitle">
+        <div>
+          <h2>Servicios</h2>
+          <p>Selecciona el área y cuéntanos tu caso. Si no ves tu asunto, igual podemos orientarte.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card item">
+          <div class="pill"><span class="icon">⚖️</span> Civil</div>
+          <h3>Contratos y obligaciones</h3>
+          <p>Incumplimientos, daños, arrendamiento, cobros, conciliación y litigio.</p>
+        </div>
+
+        <div class="card item">
+          <div class="pill"><span class="icon">🏢</span> Mercantil</div>
+          <h3>Empresas y cobranza</h3>
+          <p>Pagos, pagarés, facturas, juicios mercantiles y estrategia preventiva.</p>
+        </div>
+
+        <div class="card item">
+          <div class="pill"><span class="icon">👨‍👩‍👧‍👦</span> Familiar</div>
+          <h3>Divorcio y pensión</h3>
+          <p>Custodia, visitas, alimentos, sucesiones y convenios.</p>
+        </div>
+
+        <div class="card item">
+          <div class="pill"><span class="icon">🧑‍💼</span> Laboral</div>
+          <h3>Despido y prestaciones</h3>
+          <p>Negociación, demandas, finiquitos, indemnización y asesoría patronal.</p>
+        </div>
+
+        <div class="card item">
+          <div class="pill"><span class="icon">🛡️</span> Penal</div>
+          <h3>Defensa y acompañamiento</h3>
+          <p>Asistencia en carpeta, audiencias, medidas cautelares y asesoría a víctimas.</p>
+        </div>
+
+        <div class="card item">
+          <div class="pill"><span class="icon">📄</span> Consultoría</div>
+          <h3>Prevención legal</h3>
+          <p>Revisión de contratos, políticas internas, cumplimiento y mediación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <div class="container">
+      <div class="sectionTitle">
+        <div>
+          <h2>Nosotros</h2>
+          <p>
+            Somos un despacho enfocado en soluciones: análisis, estrategia y comunicación clara.
+            Nuestro objetivo es que entiendas tu caso y tomes decisiones informadas.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card item">
+          <div class="pill"><span class="icon">🎯</span> Enfoque</div>
+          <h3>Resultados y prevención</h3>
+          <p>Buscamos acuerdos viables cuando conviene y litigamos cuando es necesario, minimizando riesgos.</p>
+        </div>
+        <div class="card item">
+          <div class="pill"><span class="icon">🧭</span> Valores</div>
+          <h3>Ética, confidencialidad, transparencia</h3>
+          <p>Honorarios claros, comunicación honesta y resguardo de información sensible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <div class="container">
+      <div class="sectionTitle">
+        <div>
+          <h2>Cómo trabajamos</h2>
+          <p>Un proceso simple para avanzar rápido y con orden.</p>
+        </div>
+      </div>
+
+      <div class="grid3 steps">
+        <div class="card step">
+          <h3>Diagnóstico</h3>
+          <p>Revisamos hechos y documentos. Identificamos riesgos, tiempos y opciones.</p>
+        </div>
+        <div class="card step">
+          <h3>Estrategia</h3>
+          <p>Definimos objetivo, plan de acción y presupuesto. Todo por escrito.</p>
+        </div>
+        <div class="card step">
+          <h3>Ejecución y seguimiento</h3>
+          <p>Implementamos, negociamos o litigamos y te mantenemos al tanto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="sectionTitle">
+        <div>
+          <h2>Preguntas frecuentes</h2>
+          <p>Respuestas rápidas a dudas comunes.</p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <details>
+          <summary>¿Cuánto cuesta una consulta?</summary>
+          <p>Depende del tipo de asunto y la complejidad. Te damos un rango y opciones después del diagnóstico.</p>
+        </details>
+        <details>
+          <summary>¿Atienden en línea?</summary>
+          <p>Sí. Podemos tener consulta por videollamada y recibir documentos por medios digitales.</p>
+        </details>
+        <details>
+          <summary>¿Qué documentos debo llevar?</summary>
+          <p>Identificación, contratos, comprobantes, mensajes/correos y cualquier documento relacionado. Te damos una lista exacta al agendar.</p>
+        </details>
+        <details>
+          <summary>¿Pueden llevar mi caso si estoy en otra ciudad?</summary>
+          <p>Podemos asesorarte a distancia y, dependiendo de jurisdicción, coordinar representación o corresponsalía.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="sectionTitle">
+        <div>
+          <h2>Contacto</h2>
+          <p>Cuéntanos tu situación y te respondemos en 24–48 horas (días hábiles).</p>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card item">
+          <div class="ok" id="okBox">✅ Listo. Tu mensaje fue preparado para enviarse.</div>
+
+          <form id="contactForm" novalidate>
+            <div class="formRow">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" autocomplete="name" required placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input id="telefono" name="telefono" autocomplete="tel" required placeholder="+52..." />
+              </div>
+            </div>
+
+            <div class="formRow">
+              <div>
+                <label for="email">Correo</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="tucorreo@..." />
+              </div>
+              <div>
+                <label for="area">Área</label>
+                <select id="area" name="area" required>
+                  <option value="" selected disabled>Selecciona…</option>
+                  <option>Civil</option>
+                  <option>Mercantil</option>
+                  <option>Familiar</option>
+                  <option>Laboral</option>
+                  <option>Penal</option>
+                  <option>Consultoría</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required placeholder="Describe tu caso brevemente: qué pasó, fechas clave y qué buscas lograr."></textarea>
+              <div class="note">No compartas contraseñas ni datos bancarios por este medio.</div>
+            </div>
+
+            <button class="btn primary" type="submit">Enviar</button>
+            <div class="note">Al enviar aceptas que te contactemos para dar seguimiento. La información es confidencial.</div>
+          </form>
+        </div>
+
+        <div class="card item">
+          <div class="pill"><span class="icon">📍</span> Información</div>
+          <h3>Datos del despacho</h3>
+          <p class="muted" style="margin-bottom:12px">
+            Puedes editar dirección y horario cuando lo desees.
+          </p>
+
+          <div style="display:grid; gap:10px;">
+            <div style="padding:12px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03)">
+              <b>Dirección</b><br />
+              <span class="muted">Av las Torres 22, Santa Clara Coatitla, 55540 Ecatepec de Morelos, Méx., México</span>
+            </div>
+            <div style="padding:12px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03)">
+              <b>Horario</b><br />
+              <span class="muted">Lun–Vie 9:00–18:00</span>
+            </div>
+            <div style="padding:12px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03)">
+              <b>Teléfono / WhatsApp</b><br />
+              <span class="muted">+52 56 1768 7781</span>
+            </div>
+            <div style="padding:12px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03)">
+              <b>Correo</b><br />
+              <span class="muted">carmonahuertafabian7@gmail.com</span>
+            </div>
+
+            <!-- ✅ MAPA (pega aquí tu iframe real de Google Maps) -->
+            <div style="padding:12px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:rgba(255,255,255,.03)">
+              <b>Ubicación</b><br />
+              <div class="note" style="margin:8px 0 10px;">
+                Para mostrar el mapa: en Google Maps → Compartir → Insertar un mapa → copia el iframe y pégalo aquí.
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60159.00773688335!2d-99.14351567832037!3d19.544275899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f090f306ff0d%3A0x45ddc0d601a102f9!2sDESPACHO%20JURIDICO%20BRAVO%20%26%20ASOCIADOS!5e0!3m2!1ses-419!2smx!4v1769186491060!5m2!1ses-419!2smx" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+            </div>
+          </div>
+
+          <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,.08); padding-top:14px;">
+            <a class="btn" href="#inicio">Volver arriba</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footerGrid">
+      <div class="foot">
+        <div class="brand" style="margin-bottom:10px">
+          <img class="logoImg" src="logo-bravo.png" alt="Bravo & Asociados">
+          <span>Bravo <span style="opacity:.75">&amp;</span> Asociados</span>
+        </div>
+        <p class="tiny">
+          Este sitio no constituye asesoría legal. Cada caso es distinto y requiere análisis específico.
+        </p>
+        <p class="tiny">© <span id="year"></span> Bravo &amp; Asociados. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="foot">
+        <b>Secciones</b>
+        <div style="display:grid; gap:8px; margin-top:10px">
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+
+      <div class="foot">
+        <b>Contacto</b>
+        <div style="display:grid; gap:8px; margin-top:10px">
+          <a href="#contacto">Agendar consulta</a>
+          <a href="#faq">Preguntas frecuentes</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" id="waBtn" href="#" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <span class="b" aria-hidden="true">💬</span>
+  <span>
+    <strong>WhatsApp</strong>
+    <small>Respuesta rápida</small>
+  </span>
+</a>
+
+<script>
+  // ====== CONFIGURA AQUÍ (YA LISTO CON TUS DATOS) ======
+  const WHATSAPP_NUMBER = "525617687781"; // ✅ +52 56 1768 7781
+  const EMAIL_TO = "carmonahuertafabian7@gmail.com"; // ✅ tu correo
+  // =====================================================
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const nav = document.getElementById("nav");
+  const menuBtn = document.getElementById("menuBtn");
+  menuBtn?.addEventListener("click", () => nav.classList.toggle("open"));
+
+  const waBtn = document.getElementById("waBtn");
+  const waTextDefault = "Hola, me gustaría agendar una consulta con Bravo & Asociados.";
+  waBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waTextDefault)}`;
+
+  const form = document.getElementById("contactForm");
+  const okBox = document.getElementById("okBox");
+
+  function val(id){ return (document.getElementById(id)?.value || "").trim(); }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nombre = val("nombre");
+    const telefono = val("telefono");
+    const email = val("email");
+    const area = val("area");
+    const mensaje = val("mensaje");
+
+    if(!nombre || !telefono || !area || !mensaje){
+      alert("Por favor completa nombre, teléfono, área y mensaje.");
+      return;
+    }
+
+    const body =
+`Nuevo contacto - Bravo & Asociados
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Correo: ${email || "No proporcionado"}
+Área: ${area}
+
+Mensaje:
+${mensaje}
+`;
+
+    const text = `Hola, soy ${nombre}. Mi caso es de ${area}. ${mensaje} (Tel: ${telefono}${email ? ", Email: " + email : ""})`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+
+    // Si prefieres abrir correo en vez de WhatsApp, descomenta esto:
+    // const subject = `Contacto web - ${nombre} (${area})`;
+    // window.location.href = `mailto:${encodeURIComponent(EMAIL_TO)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    okBox.style.display = "block";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
